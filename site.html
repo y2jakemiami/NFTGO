@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versus Crypto Arbitrage</title>
+    <style>
+        /* Сброс стилей */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Фон с градиентом и неоновыми акцентами */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #0f0f23 50%, #1a0a1a 100%);
+            z-index: -1;
+        }
+
+        /* Обертка для контента */
+        .container {
+            max-width: 100%;
+            padding: 20px;
+            margin: auto;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Заголовок */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00f2ff, #8a2be2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+            letter-spacing: 1px;
+        }
+
+        /* Статус обучения */
+        .status {
+            background: rgba(30, 30, 46, 0.7);
+            border: 1px solid #2c2c54;
+            border-radius: 12px;
+            padding: 15px 25px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #00f2ff;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(138, 43, 226, 0.4); }
+            100% { box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); }
+        }
+
+        /* Блок меню */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 30px;
+        }
+
+        .menu-item {
+            background: rgba(25, 25, 40, 0.8);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 10px;
+            padding: 20px 10px;
+            cursor: not-allowed;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #00f2ff, #8a2be2, #00f2ff);
+            z-index: -1;
+            filter: blur(15px);
+            opacity: 0.3;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            opacity: 0.7;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+        }
+
+        .menu-item i {
+            font-size: 2.5rem;
+            color: #00f2ff;
+            margin-bottom: 10px;
+        }
+
+        .menu-item span {
+            font-size: 0.9rem;
+            color: #a0a0c0;
+        }
+
+        /* Нижний бар (для Telegram Web App) */
+        .footer-bar {
+            background: rgba(15, 15, 30, 0.95);
+            border-top: 1px solid rgba(138, 43, 226, 0.3);
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: #8a2be2;
+            font-size: 0.9rem;
+        }
+
+        .footer-bar p {
+            margin: 0;
+        }
+
+        /* Анимация при загрузке */
+        .container {
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nexus Crypto</h1>
+        <p style="font-size:1.1rem; color: #a0a0c0; max-width: 500px; font-family: monospace;">
+            Платформа обучения арбитражу в криптовалютах
+        </p>
+
+        <div class="status">
+            🔒 Режим обучения. Функционал ограничен.
+        </div>
+        <p style="color: #00f2ff; margin: 10px 0 30px;">
+            Ожидается одобрение куратора для доступа к торговым инструментам.
+        </p>
+
+        <div class="menu-grid">
+            <div class="menu-item">
+                <i>📊</i>
+                <span>Аналитика</span>
+            </div>
+            <div class="menu-item">
+                <i>📈</i>
+                <span>Торговля</span>
+            </div>
+            <div class="menu-item">
+                <i>💼</i>
+                <span>Портфель</span>
+            </div>
+            <div class="menu-item">
+                <i>⚙️</i>
+                <span>Настройки</span>
+            </div>
+            <div class="menu-item">
+                <i>❓</i>
+                <span>Поддержка</span>
+            </div>
+            <div class="menu-item">
+                <i>🏆</i>
+                <span>Соревнования</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <p>© 2025 Nexus Crypto. Все права защищены.</p>
+    </div>
+</body>
+</html>
